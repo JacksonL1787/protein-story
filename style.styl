@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli:wght@200;300;400;500;600;700;800;900&display=swap');
+
+body
+  margin 0
+  font-family "Muli", sans-serif !important
+  overflow hidden
+
+button,
+input,
+textarea
+  font-family "Muli", sans-serif !important
+
+.step-container
+  display none
+  position absolute
+  top 0
+  left 0
+  width 100%
+  height 100vh
+  &.active
+    display block
+
+.begin-story-container
+  .content
+    width fit-content
+    height fit-content
+    position absolute
+    top 50%
+    left 50%
+    transform translate(-50%, -50%)
+    h1
+      color #333
+      font-weight 800
+      letter-spacing .3px
+      font-size 25px
+      margin 0 0 20px
+    button
+      margin 0 auto
+      outline none
+      border none
+      background #3492eb
+      border-radius .3em
+      color white
+      font-weight 500
+      letter-spacing .3px
+      padding 8px 30px
+      cursor pointer
+      display block
+      transition background .3s
+      &:hover
+        background #2870b5
+
+.demo-container
+  .title-container
+    display flex
+    justify-content center
+    margin 30px auto
+    .title
+      color #333
+      font-size 20px
+      font-weight 700
+      letter-spacing .3px
+      margin 0 20px 0 0
+    .next-btn
+      margin 0
+      outline none
+      border none
+      background #3492eb
+      border-radius .3em
+      color white
+      font-weight 500
+      letter-spacing .3px
+      padding 8px 30px
+      cursor pointer
+      display block
+      transition background .3s
+      &.inactive
+        background rgb(190, 190, 190) !important
+        color #333 !important
+        cursor not-allowed !important
+      &:hover
+        background #2870b5
+  .content
+    width 100%
+    height fit-content
+    overflow-x auto
+    padding-bottom 40px
+    position relative
+    min-height 400px
+    .amino-acids-container
+      display flex
+      justify-content left
+      align-items center
+      margin-left 87.5px
+      .amino-acid
+        background rgb(169, 22, 199)
+        width 40px
+        height 40px
+        border-radius 40px
+        position relative
+        animation fadeIn .3s
+        p
+          color #fff
+          position absolute
+          top 50%
+          left 50%
+          margin 0
+          letter-spacing .3px
+          transform translate(-50%, -50%)
+      .connector
+        background #333
+        width 50px
+        height 5px
+        animation fadeIn .3s
+    .trna
+      margin-left 20px
+      width 180px
+      transition opacity .3s
+      animation fadeIn .3s
+      .connector
+        background #333
+        width 5px
+        height 50px
+        margin 0 auto
+      .body
+        background #6d7697
+        width 180px
+        height 100px
+        position relative
+        p
+          color white
+          margin 0
+          letter-spacing .3px
+          font-size 15px
+          position absolute
+          top 50%
+          left 50%
+          transform translate(-50%, -50%)
+      .letters
+        display flex
+        justify-content space-around
+        height fit-content
+        .text-bg
+          width 20px
+          height 70px
+          background black
+          position relative
+          margin 0 auto
+          &.letter-a
+            background green
+          &.letter-c
+            background blue
+          &.letter-g
+            background orange
+          &.letter-u
+            background red
+          p
+            color white
+            font-size 15px
+            font-weight 700
+            position absolute
+            top 50%
+            left 50%
+            margin 0
+            transform translate(-50%, -50%)
+
+
+    .ribosome
+      background black
+      width 180px
+      height 220px
+      position absolute
+      top 0
+      left 20px
+      z-index -1
+      opacity 1
+      animation fadeIn .5s linear
+      p
+        color white
+        position absolute
+        top 10px
+        left 50%
+        transform translateX(-50%)
+        letter-spacing .3px
+        margin 0
+    .complementary-dna-strand
+      .letter
+        flex-direction: column-reverse !important
+        opacity 1
+        transform translateY(0)
+        animation addCompDnaLetter .5s linear
+        transition opacity .5s linear, transform .5s linear
+        &.hidden
+          opacity 0
+          transform translateY(20px)
+    .dna-strand
+      transition margin-top .4s
+      &.in-ribosome
+        margin-top 80px
+    .strand
+      display flex
+      justify-content left
+      align-items flex-start
+      width fit-content
+      height fit-content
+      margin-left 20px
+      .letter
+        display flex
+        justify-content center
+        flex-direction column
+        transition opacity .5s linear, transform .5s linear
+        &.letter-a .text-bg
+          background green
+        &.letter-c .text-bg
+          background blue
+        &.letter-g .text-bg
+          background orange
+        &.letter-t .text-bg
+          background red
+        &.letter-u .text-bg
+          background red
+        .bar
+          width 60px
+          height 6px
+          background #6D7697
+        .text-bg
+          width 20px
+          height 70px
+          background black
+          position relative
+          margin 0 auto
+          p
+            color white
+            font-size 15px
+            font-weight 700
+            position absolute
+            top 50%
+            left 50%
+            margin 0
+            transform translate(-50%, -50%)
+
+@keyframes fadeIn
+  0%
+    opacity 0
+  100%
+    opacity 1
+
+@keyframes addCompDnaLetter
+  0%
+    opacity 0
+    transform translateY(20px)
+  100%
+    opacity 1
+    transform translateY(0)
