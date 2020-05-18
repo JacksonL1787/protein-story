@@ -210,8 +210,8 @@ $(".demo-container .next-btn").click(function() {
     $(".demo-container .title-container .title").text("Translation")
     translation()
   } else if (phase === "translation") {
-    $('.demo-container').attr("data-phase", "protein")
-    $(".demo-container .title-container .title").text("Protein")
+    $(".demo-container").removeClass("active")
+    $('.protein-container').addClass("active")
     $('.demo-container .next-btn').remove()
   }
 
